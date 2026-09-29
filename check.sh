@@ -18,7 +18,7 @@ done
 
 step "regression/ld and ld-verify"
 ctest --test-dir /opt/esbmc/build -j"$(nproc)" --timeout 300 \
-  -L '^ld/$|^ld-verify$' | tail -3 || fail=1
+  -L '^ld/$|^ld-verify$' | grep -E 'tests passed|\*\*\*' || fail=1
 
 step "WS0 reproducers"
 out=$(mktemp -d)
