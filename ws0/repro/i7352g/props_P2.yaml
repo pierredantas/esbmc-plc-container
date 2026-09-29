@@ -1,0 +1,5 @@
+properties:
+- id: P2
+  kind: invariant
+  expression: '!OneShot || Sig'
+  description: The one-shot fires only while Sig is high

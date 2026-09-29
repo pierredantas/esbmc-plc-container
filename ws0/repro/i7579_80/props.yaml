@@ -1,0 +1,6 @@
+format_version: "0.1"
+properties:
+  - id: P1
+    kind: invariant
+    expression: "!Stroke || (LH && RH)"
+    justification: "ISO 13851 requires the ram to descend only while both actuators are held. Releasing either one stops the stroke."

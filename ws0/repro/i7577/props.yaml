@@ -1,0 +1,13 @@
+properties:
+  - id: P1
+    kind: invariant
+    expression: "!A || Y"
+    description: "Branch A energises Y"
+  - id: P2
+    kind: invariant
+    expression: "!B || Y"
+    description: "Branch B energises Y"
+  - id: P3
+    kind: invariant
+    expression: "!Y || A || B"
+    description: "Y only when A or B"

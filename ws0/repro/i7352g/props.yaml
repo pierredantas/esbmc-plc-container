@@ -1,0 +1,9 @@
+properties:
+  - id: P1
+    kind: absence
+    expression: "OneShot"
+    description: "Deliberately false: under IEC sequential rung order the one-shot fires on a rising edge of Sig"
+  - id: P2
+    kind: invariant
+    expression: "!OneShot || Sig"
+    description: "The one-shot fires only while Sig is high"

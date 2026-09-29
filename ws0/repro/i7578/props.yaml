@@ -1,0 +1,10 @@
+format_version: "0.1"
+properties:
+  - id: P1
+    kind: invariant
+    expression: "!((ps1 && ps2) || (ps2 && ps3) || (ps1 && ps3)) || trip"
+    justification: "Any two pressure switches agreeing high must trip the reactor, or the vessel stays pressurised behind a closed relief path."
+  - id: P2
+    kind: invariant
+    expression: "!trip || ((ps1 && ps2) || (ps2 && ps3) || (ps1 && ps3))"
+    justification: "A single stuck-high switch must not trip: spurious trips on a batch plant cost a charge and train operators to bypass the vote."

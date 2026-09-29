@@ -1,0 +1,10 @@
+format_version: "0.1"
+properties:
+  - id: P1
+    kind: invariant
+    expression: "!(machine_run && !guard_closed)"
+    justification: "The machine drive must remain inert when the physical guard door is open to prevent operator entanglement."
+  - id: P2
+    kind: reachability
+    expression: "machine_run && !guard_closed"
+    justification: "Trigger synthesis: a witness recovers the failure of the safety relay check."

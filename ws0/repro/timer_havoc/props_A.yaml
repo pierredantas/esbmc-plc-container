@@ -1,0 +1,5 @@
+properties:
+  - id: A
+    kind: invariant
+    expression: "!Light || Btn"
+    description: "Light implies Btn"

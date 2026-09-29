@@ -1,0 +1,6 @@
+properties:
+- id: P1
+  kind: absence
+  expression: OneShot
+  description: 'Deliberately false: under IEC sequential rung order the one-shot fires
+    on a rising edge of Sig'
