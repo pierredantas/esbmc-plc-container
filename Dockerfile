@@ -9,8 +9,8 @@
 # ESBMC's bundled 32-bit libc needs g++-multilib, which arm64 Ubuntu lacks.
 FROM ubuntu:24.04@sha256:008173c23f95b170204355c12626cb5a965d779a7e1283b09e9cffbb1bf33ca3
 
-ARG ESBMC_REPO=https://github.com/pierredantas/esbmc.git
-ARG ESBMC_COMMIT=27fdf119e6209d3ea67129461395dd64fa1f5c88
+ARG ESBMC_REPO=https://github.com/esbmc/esbmc.git
+ARG ESBMC_COMMIT=8b0d3fd0e08fcc97000b50dc59979d809155e013
 ARG SUITE_REPO=https://github.com/pierredantas/esbmc-plc-benchmark-suite.git
 ARG SUITE_COMMIT=8de8d1fe3ab67499727954d44f00abed5f58db80
 ARG BEREMIZ_COMMIT=df4370ce2718e328297b31cf46e7fbca6210d55c
