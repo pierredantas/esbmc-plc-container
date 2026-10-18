@@ -3,16 +3,19 @@
 # (PLCopen XML -> ST -> C -> ESBMC's C front end) runs on.
 #
 # Build from the repository root:
-#   docker build --platform linux/amd64 -t esbmc-plc:ws0 .
+#   docker build --platform linux/amd64 -t esbmc-plc:paper .
+#
+# ESBMC is pinned at the fork commit behind the TOSEM paper (tag paper-pin-r3-2026-10-13), which
+# carries the prototype --ld-monitor-invariants option; the suite at release v1.2.0.
 #
 # Every source is fixed by commit and the base image by digest. amd64 only:
 # ESBMC's bundled 32-bit libc needs g++-multilib, which arm64 Ubuntu lacks.
 FROM ubuntu:24.04@sha256:008173c23f95b170204355c12626cb5a965d779a7e1283b09e9cffbb1bf33ca3
 
-ARG ESBMC_REPO=https://github.com/esbmc/esbmc.git
-ARG ESBMC_COMMIT=625fb825ff5dd63413329d57fb10d335375814e0
+ARG ESBMC_REPO=https://github.com/pierredantas/esbmc.git
+ARG ESBMC_COMMIT=03ad8f91afe393b0cc58620c35fd3885c2ae3e25
 ARG SUITE_REPO=https://github.com/pierredantas/esbmc-plc-benchmark-suite.git
-ARG SUITE_COMMIT=8de8d1fe3ab67499727954d44f00abed5f58db80
+ARG SUITE_COMMIT=6d1e3c3d3dde1188fa00a7397c36f1ecfaf8f843
 ARG BEREMIZ_COMMIT=df4370ce2718e328297b31cf46e7fbca6210d55c
 ARG MATIEC_COMMIT=7949c0bda1787de9c7cacaa4876ede49f85262dd
 
@@ -56,6 +59,12 @@ RUN fetch_commit /opt/suite "$SUITE_REPO" "$SUITE_COMMIT"
 COPY ws0/cases.tsv ws0/run_repro.sh /opt/ws0/
 COPY ws0/repro /opt/ws0/repro
 COPY check.sh /usr/local/bin/check-image
+
+# The paper's run scripts expect the suite and MATIEC beside them, as in the authors' tree.
+COPY paper /opt/paper
+RUN ln -s /opt/suite /opt/paper/ESBMC-Benchmark-Suite \
+ && ln -s /opt/plc-tools /root/plc-tools \
+ && ln -s /opt/paper/reproduce.sh /usr/local/bin/reproduce-paper
 
 ENV PATH=/opt/esbmc/build/src/esbmc:/opt/esbmc/build/tools/ld-verify:$PATH \
     PLC_TOOLS=/opt/plc-tools \
