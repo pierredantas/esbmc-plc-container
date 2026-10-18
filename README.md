@@ -15,6 +15,20 @@ docker run --rm -it ghcr.io/pierredantas/esbmc-plc-container@sha256:<digest> bas
 
 Inside the container: ESBMC in `/opt/esbmc` (built, with `esbmc` on `PATH`), the suite in `/opt/suite`, the tools in `/opt/plc-tools` (`$PLC_TOOLS`), and the reproducers in `/opt/ws0`.
 
+## Reproducing the TOSEM paper
+
+The image pins the build behind *ESBMC-PLC: Verifying IEC 61131-3 Ladder Diagrams with a Validated Translation to
+SMT-Based Model Checking*: ESBMC at fork commit `03ad8f91af` (tag `paper-pin-r3-2026-10-13`, which adds the prototype
+`--ld-monitor-invariants` used in RQ4) and suite release v1.2.0. The run scripts are in `/opt/paper`.
+
+```
+docker run --rm -v "$PWD/out:/out" ghcr.io/pierredantas/esbmc-plc-container@sha256:<digest> reproduce-paper
+```
+
+`reproduce-paper` reruns every experiment (several hours on 8 cores). `paper/CLAIMS.md` maps each number in the paper
+to its archived record in `results-2026-10-18.tar.gz`, attached to this repository's release, and to the step that
+regenerates it. Run times depend on the machine; verdicts should not.
+
 ## Updating a pin
 
 Change the commit in `Dockerfile`, push, and record the new digest from the workflow summary. The `ws0/` folder is a copy of `ESBMC_PLC/ws0` (cases, reproducers, runner); refresh it when those change.
