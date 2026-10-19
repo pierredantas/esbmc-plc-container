@@ -29,6 +29,15 @@ docker run --rm -v "$PWD/out:/out" ghcr.io/pierredantas/esbmc-plc-container@sha2
 to its archived record in `results-2026-10-18.tar.gz`, attached to this repository's release, and to the step that
 regenerates it. Run times depend on the machine; verdicts should not.
 
+### Programs mined from GitHub (RQ2)
+
+`paper/ESBMC_PLC/ws_thirdparty/` holds the GitHub search hits, a manifest with the repository, path, commit, blob, and
+license of each of the 1,290 files, the 1,018 distinct programs after merging copies, and the per-program results.
+Many of those repositories carry no license, so the files themselves are not included; `reproduce.sh` fetches them
+through the GitHub API (it needs an authenticated `gh`) and reruns the check. This run used fork commit `1d7ad4332b`,
+the image's commit plus four parser refusals; build it with `--build-arg ESBMC_COMMIT=1d7ad4332b60a32d69354af2abc1b4af50ee253e`.
+`REPORT.md` records the corpus, the harness edits, and the results.
+
 ## Updating a pin
 
 Change the commit in `Dockerfile`, push, and record the new digest from the workflow summary. The `ws0/` folder is a copy of `ESBMC_PLC/ws0` (cases, reproducers, runner); refresh it when those change.
