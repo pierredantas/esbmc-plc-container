@@ -69,10 +69,16 @@ def free_reads(esbmc, ld_path, props):
     return set(names)
 
 
+def props_file(task_dir):
+    """`properties_file` in benchmark.yml, else props.yaml: a syntax twin names its sibling's file."""
+    meta = yaml.safe_load((task_dir / "benchmark.yml").read_text())
+    return (task_dir / meta.get("properties_file", "props.yaml")).resolve()
+
+
 def one(job, esbmc):
     task_dir, variant = job
     text = (task_dir / variant).read_text(encoding="utf-8").lstrip("﻿")
-    spec = yaml.safe_load((task_dir / "props.yaml").read_text())
+    spec = yaml.safe_load(props_file(task_dir).read_text())
     if not text.lstrip().startswith("<"):
         names = set()
         for prop in spec.get("properties", []):
@@ -122,7 +128,7 @@ def main():
     args = ap.parse_args()
     jobs = []
     for d in sorted((args.suite / "benchmarks").glob("*/*")):
-        if not (d / "benchmark.yml").exists() or not (d / "props.yaml").exists():
+        if not (d / "benchmark.yml").exists() or not props_file(d).exists():
             continue
         meta = yaml.safe_load((d / "benchmark.yml").read_text())
         if str(meta.get("language", "")).startswith("LD"):

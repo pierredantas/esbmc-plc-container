@@ -5,7 +5,7 @@
 # Build from the repository root:
 #   docker build --platform linux/amd64 -t esbmc-plc:paper .
 #
-# ESBMC is pinned at the fork commit behind the TOSEM paper (tag paper-pin-r3-2026-10-13), which
+# ESBMC is pinned at the fork commit behind the paper (tag paper-pin-r3-2026-10-13), which
 # carries the prototype --ld-monitor-invariants option; the suite at release v1.2.0.
 #
 # Every source is fixed by commit and the base image by digest. amd64 only:

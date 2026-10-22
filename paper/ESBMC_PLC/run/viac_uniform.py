@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify the suite's LD variants through MATIEC's C instead of the LD front end.
 
-Answers the referee question "why not verify MATIEC's C directly?". For each variant the
+Answers the question "why not verify MATIEC's C directly?". For each variant the
 suite's own C route builds the C (PLCopen XML -> Beremiz ST -> MATIEC C) and a harness; this
 script then makes the harness match the LD route's scan model: an unbounded scan loop
 instead of a fixed count, and a clock that advances 1 ms per scan (the LD default counts one
