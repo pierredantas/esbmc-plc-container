@@ -18,6 +18,7 @@ import json
 import os
 import pathlib
 import re
+import signal
 import subprocess
 import sys
 import tempfile
@@ -86,8 +87,16 @@ def main():
             cmd = [args.esbmc, str(harness), "-I", str(rvc.TOOLS / "matiec" / "lib" / "C"),
                    "-I", str(outdir), "--k-induction", "--timeout", f"{args.timeout}s"]
             t0 = time.time()
-            res = subprocess.run(cmd, capture_output=True, text=True, check=False)
-            log = res.stdout + res.stderr
+            # ESBMC's --timeout did not always stop a run at 900 s, so the process group is also killed 30 s later.
+            proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                                    start_new_session=True)
+            try:
+                out, err = proc.communicate(timeout=args.timeout + 30)
+                log = out + err
+            except subprocess.TimeoutExpired:
+                os.killpg(proc.pid, signal.SIGKILL)
+                proc.communicate()
+                log = "Timed out (external limit)"
             row["cpu_s"] = round(time.time() - t0, 3)
         row["verdict"] = ("SAFE" if "VERIFICATION SUCCESSFUL" in log else
                           "VIOLATION" if "VERIFICATION FAILED" in log else
