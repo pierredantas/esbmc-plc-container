@@ -18,8 +18,10 @@ docker run --rm -v "$PWD/out:/out" esbmc-plc reproduce-extra     # the C route a
 
 The image we built is not published; this is deliberate. The `Dockerfile` pins every source, the Ubuntu 24.04 base
 by digest and ESBMC, the suite, Beremiz, and MATIEC by commit, so building it shows exactly what runs and nothing
-else. The image digest from our CI build on amd64 is recorded below once CI has built it. A local build need not match a digest byte for byte, but `check-image`
-and the verdicts should.
+else. Our CI built this `Dockerfile` on amd64 on October 24, 2026
+(`sha256:d031b091b7f8db2d4d2149ba4d480aaf65913dc61e52b24482900e9e3ffce810`; `check-image` passed, 325 of 325 LD
+tests and 12 of 12 WS0 reproducers). A local build need not match the digest byte for byte, but `check-image` and the
+verdicts should.
 
 `check-image` runs the LD unit tests, `regression/ld` and `ld-verify`, the twelve WS0 reproducers, and one benchmark program through both routes.
 
