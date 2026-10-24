@@ -1,0 +1,8 @@
+RT  ok   expected SATISFIED got SATISFIED OK
+RT  bad  expected VIOLATED  got VIOLATED OK
+FT  ok   expected SATISFIED got SATISFIED OK
+FT  bad  expected VIOLATED  got VIOLATED OK
+CU  ok   expected SATISFIED got SATISFIED OK
+CU  bad  expected VIOLATED  got VIOLATED OK
+CD  ok   expected SATISFIED got SATISFIED OK
+CD  bad  expected VIOLATED  got VIOLATED OK

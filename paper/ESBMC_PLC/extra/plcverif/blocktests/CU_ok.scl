@@ -1,0 +1,12 @@
+FUNCTION_BLOCK CU_TEST
+VAR_INPUT
+  P : BOOL;
+  RS : BOOL;
+END_VAR
+VAR
+  c : CTU;
+END_VAR
+BEGIN
+  c(CU := P, R := RS, PV := 2);
+  //#ASSERT (c.Q = (c.CV >= 2)) AND NOT (RS AND c.Q) : Pok
+END_FUNCTION_BLOCK

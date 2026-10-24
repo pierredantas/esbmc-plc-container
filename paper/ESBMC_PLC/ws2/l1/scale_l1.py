@@ -9,23 +9,32 @@ Usage: scale_l1.py WORKDIR ESBMC EXPERIMENT [TIMEOUT_S]    EXPERIMENT in s1, s2,
   s4  the s1 cases by k-induction with --ld-fb-invariants --ld-monitor-invariants (experimental branch exp/ld-monitor-invariant)
 Needs an ESBMC with --ld-cycle-time, --ld-fb-invariants and max_ms (branch scratch/ws2-all). macOS /usr/bin/time -l.
 """
-import json, pathlib, re, subprocess, sys, time
+import json, os, pathlib, re, signal, subprocess, sys, time
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import gen_l1, model
 
 TIMEOUT = 600
+# BSD time reports peak memory with -l (macOS), GNU time with -v (the Linux image).
+TIME_FLAG = "-l" if sys.platform == "darwin" else "-v"
 
 
 def run(esbmc, case, args):
     t0 = time.perf_counter()
+    # A timeout must kill ESBMC too, not only /usr/bin/time, or ESBMC runs on and loads every later measurement.
+    p = subprocess.Popen(["/usr/bin/time", TIME_FLAG, esbmc] + args, cwd=case, stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE, text=True, start_new_session=True)
     try:
-        p = subprocess.run(["/usr/bin/time", "-l", esbmc] + args, cwd=case, capture_output=True, text=True, timeout=TIMEOUT)
+        stdout, stderr = p.communicate(timeout=TIMEOUT)
     except subprocess.TimeoutExpired:
+        os.killpg(p.pid, signal.SIGKILL)
+        p.communicate()
         return {"verdict": "TIMEOUT", "k": None, "sec": TIMEOUT, "mb": None}
-    out = p.stdout + p.stderr
+    out = stdout + stderr
     v = re.search(r"VERIFICATION (\w+)", out)
     k = re.search(r"inductive step \(k = (\d+)\)", out)
-    rss = re.search(r"(\d+)\s+maximum resident set size", out)
+    rss = re.search(r"(\d+)\s+maximum resident set size", out)  # BSD time -l: bytes
+    if not rss and (m := re.search(r"Maximum resident set size \(kbytes\): (\d+)", out)):  # GNU time -v: kB
+        rss = re.match(r"(\d+)", str(int(m.group(1)) * 1024))
     return {"verdict": v.group(1) if v else "ERROR", "k": int(k.group(1)) if k else None,
             "sec": round(time.perf_counter() - t0, 2), "mb": round(int(rss.group(1)) / 2**20) if rss else None}
 

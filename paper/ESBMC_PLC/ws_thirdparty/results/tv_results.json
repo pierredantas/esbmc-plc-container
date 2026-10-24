@@ -240,7 +240,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/0828dd1b56c03d1b/program.ld:0:0: undeclared variable 'xGo'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/0828dd1b56c03d1b/program.ld:0:0: undeclared variable 'xGo'"
  },
  {
   "id": "085fa60183a20d24",
@@ -278,7 +278,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/087a97b4db4b94f1/program.ld: no ladder logic was translated; the scan cycle would be empty and every property vacuous"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/087a97b4db4b94f1/program.ld: no ladder logic was translated; the scan cycle would be empty and every property vacuous"
  },
  {
   "id": "089a5a8c506d853e",
@@ -1073,7 +1073,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/1bbc1fa4bfeff170/program.ld: no ladder logic was translated; the scan cycle would be empty and every property vacuous"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/1bbc1fa4bfeff170/program.ld: no ladder logic was translated; the scan cycle would be empty and every property vacuous"
  },
  {
   "id": "1bd53c98cd1be4e4",
@@ -1955,7 +1955,7 @@
   ],
   "frontend_s": 0.04,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/2fe6a7006d0200d5/program.ld: Start-end tags mismatch"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/2fe6a7006d0200d5/program.ld: Start-end tags mismatch"
  },
  {
   "id": "3142f4071eeeb507",
@@ -2460,7 +2460,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/3f63af9d5f0aa112/program.ld:0:0: undeclared variable 'M1_BrakeIsOpen_DI'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/3f63af9d5f0aa112/program.ld:0:0: undeclared variable 'M1_BrakeIsOpen_DI'"
  },
  {
   "id": "3f646314c5e198db",
@@ -3028,7 +3028,7 @@
    "address"
   ],
   "tv": "tv_error",
-  "tv_detail": "ld-tv-check: '/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/4b4df54a3b16cbdc/ref/c/correlation.txt' names no out or state variable to compare",
+  "tv_detail": "ld-tv-check: '$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/4b4df54a3b16cbdc/ref/c/correlation.txt' names no out or state variable to compare",
   "tv_s": 1.2208643340000016,
   "compared": {
    "in": 2,
@@ -3683,7 +3683,7 @@
   ],
   "frontend_s": 0.04,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/5a1ac1f72c5c91fe/program.ld:0:0: undeclared variable 'xA'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/5a1ac1f72c5c91fe/program.ld:0:0: undeclared variable 'xA'"
  },
  {
   "id": "5a4715ff5234775b",
@@ -3710,7 +3710,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/5aa257a7da0e60d5/program.ld: no ladder logic was translated; the scan cycle would be empty and every property vacuous"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/5aa257a7da0e60d5/program.ld: no ladder logic was translated; the scan cycle would be empty and every property vacuous"
  },
  {
   "id": "5b7e3818126e444c",
@@ -4448,7 +4448,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/6dd20cee73d4f85c/program.ld:0:0: timer 'TP0' PT 'SORT_TIME' must be a non-negative constant"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/6dd20cee73d4f85c/program.ld:0:0: timer 'TP0' PT 'SORT_TIME' must be a non-negative constant"
  },
  {
   "id": "6e3f8d762ec6e362",
@@ -4673,7 +4673,7 @@
   ],
   "frontend_s": 0.04,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/72b85a9c1317ffd1/program.ld:0:0: undeclared variable 'TON_DryRunDelay.Q'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/72b85a9c1317ffd1/program.ld:0:0: undeclared variable 'TON_DryRunDelay.Q'"
  },
  {
   "id": "72bcfa4b3c028605",
@@ -4839,7 +4839,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/7787b1f73be3eaf5/program.ld:0:0: undeclared variable 'xStart'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/7787b1f73be3eaf5/program.ld:0:0: undeclared variable 'xStart'"
  },
  {
   "id": "77b13dbc1211fdd3",
@@ -5549,7 +5549,7 @@
   ],
   "frontend_s": 0.04,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/8990b2180485b1b6/program.ld:0:0: undeclared variable 'TON_AutoTimeout.Q'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/8990b2180485b1b6/program.ld:0:0: undeclared variable 'TON_AutoTimeout.Q'"
  },
  {
   "id": "8a1d6138fbaa4764",
@@ -5889,7 +5889,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/9112bb7df6294ed8/program.ld:0:0: undeclared variable 'c'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/9112bb7df6294ed8/program.ld:0:0: undeclared variable 'c'"
  },
  {
   "id": "922f36d2c610c71a",
@@ -6085,7 +6085,7 @@
   ],
   "frontend_s": 0.04,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/96bf6b3c33d7886d/program.ld: Start-end tags mismatch"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/96bf6b3c33d7886d/program.ld: Start-end tags mismatch"
  },
  {
   "id": "96cc08eafe49da2e",
@@ -6334,7 +6334,7 @@
   ],
   "frontend_s": 0.04,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/9b129e9d7669866a/program.ld:0:0: coil on input 'START'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/9b129e9d7669866a/program.ld:0:0: coil on input 'START'"
  },
  {
   "id": "9b79d4f1a774d3e6",
@@ -7501,7 +7501,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/b2d18c71f322339a/program.ld:0:0: undeclared variable 'xA'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/b2d18c71f322339a/program.ld:0:0: undeclared variable 'xA'"
  },
  {
   "id": "b2fd732b7af703cd",
@@ -7977,7 +7977,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/be6fac4556f41a20/program.ld:0:0: undeclared variable 'xGo'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/be6fac4556f41a20/program.ld:0:0: undeclared variable 'xGo'"
  },
  {
   "id": "bea9c706ce3a4289",
@@ -8225,7 +8225,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/c472699a4e6a6226/program.ld:0:0: undeclared variable 'TON_FbkDelay.Q'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/c472699a4e6a6226/program.ld:0:0: undeclared variable 'TON_FbkDelay.Q'"
  },
  {
   "id": "c4742ca5cf688d39",
@@ -9296,7 +9296,7 @@
   ],
   "frontend_s": 0.04,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/db14035cf3537d6e/program.ld:0:0: coil on input 'Req_F1'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/db14035cf3537d6e/program.ld:0:0: coil on input 'Req_F1'"
  },
  {
   "id": "db3891cd1f0e9665",
@@ -9686,7 +9686,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/e41ee9659f99aadd/program.ld:0:0: undeclared variable 'c1'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/e41ee9659f99aadd/program.ld:0:0: undeclared variable 'c1'"
  },
  {
   "id": "e4739e125a57545e",
@@ -10027,7 +10027,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/eaa5c96966bb9fd1/program.ld:0:0: contact has no variable"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/eaa5c96966bb9fd1/program.ld:0:0: contact has no variable"
  },
  {
   "id": "eab298ab6341e643",
@@ -10720,7 +10720,7 @@
   ],
   "frontend_s": 0.03,
   "status": "refused",
-  "reason": "/Users/user/Claude/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/fae9fbde85be00f2/program.ld:0:0: undeclared variable '%IX0.0'"
+  "reason": "$WORK/5_ESBMC-PLC Toolkit/ESBMC_PLC/ws_thirdparty/results/run1/fae9fbde85be00f2/program.ld:0:0: undeclared variable '%IX0.0'"
  },
  {
   "id": "fb190095bf64977c",
