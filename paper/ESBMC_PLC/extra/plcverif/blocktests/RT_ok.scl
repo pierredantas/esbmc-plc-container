@@ -1,0 +1,13 @@
+FUNCTION_BLOCK RT_TEST
+VAR_INPUT
+  CLK : BOOL;
+END_VAR
+VAR
+  r : R_TRIG;
+  prevQ : BOOL := FALSE;
+END_VAR
+BEGIN
+  r(CLK := CLK);
+  //#ASSERT (NOT r.Q OR CLK) AND NOT (r.Q AND prevQ) : Pok
+  prevQ := r.Q;
+END_FUNCTION_BLOCK

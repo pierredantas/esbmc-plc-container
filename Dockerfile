@@ -5,15 +5,16 @@
 # Build from the repository root:
 #   docker build --platform linux/amd64 -t esbmc-plc:paper .
 #
-# ESBMC is pinned at the fork commit behind the paper (tag paper-pin-r3-2026-10-13), which
-# carries the prototype --ld-monitor-invariants option; the suite at release v1.2.0.
+# ESBMC is pinned at the fork commit behind the paper (branch pin/paper-2026-10-jumps), which
+# carries the prototype --ld-monitor-invariants option and the parser refusals of esbmc/esbmc#8858; the
+# suite at release v1.2.0.
 #
 # Every source is fixed by commit and the base image by digest. amd64 only:
 # ESBMC's bundled 32-bit libc needs g++-multilib, which arm64 Ubuntu lacks.
 FROM ubuntu:24.04@sha256:008173c23f95b170204355c12626cb5a965d779a7e1283b09e9cffbb1bf33ca3
 
 ARG ESBMC_REPO=https://github.com/pierredantas/esbmc.git
-ARG ESBMC_COMMIT=03ad8f91afe393b0cc58620c35fd3885c2ae3e25
+ARG ESBMC_COMMIT=5efb80de7205c96ac34641e676ecfbe37d96af76
 ARG SUITE_REPO=https://github.com/pierredantas/esbmc-plc-benchmark-suite.git
 ARG SUITE_COMMIT=6d1e3c3d3dde1188fa00a7397c36f1ecfaf8f843
 ARG BEREMIZ_COMMIT=df4370ce2718e328297b31cf46e7fbca6210d55c
@@ -25,7 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       gcc-14 g++-14 g++-multilib libc6-dev-i386 \
       libboost-all-dev libgmp-dev libssl-dev bison flex \
       autoconf automake libtool \
-      python3 python3-yaml python3-lxml \
+      python3 python3-yaml python3-lxml time \
     && rm -rf /var/lib/apt/lists/*
 
 # fetch_commit DIR REPO COMMIT: a shallow fetch of exactly one commit.
@@ -64,7 +65,8 @@ COPY check.sh /usr/local/bin/check-image
 COPY paper /opt/paper
 RUN ln -s /opt/suite /opt/paper/ESBMC-Benchmark-Suite \
  && ln -s /opt/plc-tools /root/plc-tools \
- && ln -s /opt/paper/reproduce.sh /usr/local/bin/reproduce-paper
+ && ln -s /opt/paper/reproduce.sh /usr/local/bin/reproduce-paper \
+ && ln -s /opt/paper/reproduce-extra.sh /usr/local/bin/reproduce-extra
 
 ENV PATH=/opt/esbmc/build/src/esbmc:/opt/esbmc/build/tools/ld-verify:$PATH \
     PLC_TOOLS=/opt/plc-tools \
