@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- FBD body wiring TRUE to both A and B: P1 is violated every scan (#7354). -->
+<!-- FBD body wiring TRUE to both A and B: P1 is violated every scan. -->
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
   <fileHeader companyName="SAFE-LD" productVersion="1.0" creationDateTime="2026-08-27"/>
   <contentHeader name="Mutex"/>

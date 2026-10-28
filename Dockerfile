@@ -6,7 +6,7 @@
 #   docker build --platform linux/amd64 -t esbmc-plc:paper .
 #
 # ESBMC is pinned at the fork commit behind the paper (branch pin/paper-2026-10-jumps), which
-# carries the prototype --ld-monitor-invariants option and the parser refusals of esbmc/esbmc#8858; the
+# carries the prototype --ld-monitor-invariants option and the parser refusals added upstream; the
 # suite at release v1.2.0.
 #
 # Every source is fixed by commit and the base image by digest. amd64 only:

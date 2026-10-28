@@ -55,7 +55,7 @@ def main():
     if args.state_all:
         body_c = (cdir / "POUS.c").read_text(encoding="utf-8")
         # A variable the program never assigns is written only by the environment,
-        # which ESBMC models as a free read each scan (esbmc#8065): an input here.
+        # which ESBMC models as a free read each scan: an input here.
         in_names |= {n for _k, _t, n in variables
                      if not n.startswith("_TMP_") and not re.search(r"__SET_VAR\(data__->,\s*" + n + r"\b", body_c)}
     state = [resolve(n) for n in args.state]

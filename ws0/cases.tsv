@@ -1,13 +1,13 @@
 #id	defect	program	props	expected	source
-c01	7577	repro/i7577/comb_or.ld	repro/i7577/props.yaml	SAFE	issue #7577 reproducer
-c02	7577	repro/i7577/suite_g_comb_or.ld	repro/i7577/suite_props.yaml	SAFE	suite building_automation/g_comb_or
-c03	7578	repro/i7578/fbd_clean.ld	repro/i7578/props.yaml	ERROR	suite chemical_batch/fbd_reactor_2oo3 clean
-c04	7578	repro/i7578/il_body.ld	repro/i7578/il_props.yaml	ERROR	regression body_fbd_unsupported_fail with <IL> body
-c05	7579-7580	repro/i7579_80/program.ld	repro/i7579_80/props.yaml	SAFE	suite manufacturing/g_two_hand_fb program
-c06	7579-7580	repro/i7579_80/type_i.ld	repro/i7579_80/props.yaml	SAFE	suite manufacturing/g_two_hand_fb type_i
-c07	7352	repro/i7352/clean.ld	repro/i7352/props.yaml	SAFE	suite packaging/guard_door_interlock clean
-c08	7352	repro/i7352/bomb.ld	repro/i7352/props.yaml	VIOLATION	suite packaging/guard_door_interlock bomb
-c09	7353	repro/i7353/program.ld	repro/i7353/props.yaml	SAFE	suite elevator/g_ctd_load
+c01	d01	repro/d01/comb_or.ld	repro/d01/props.yaml	SAFE	defect d01 reproducer
+c02	d01	repro/d01/suite_g_comb_or.ld	repro/d01/suite_props.yaml	SAFE	suite building_automation/g_comb_or
+c03	d02	repro/d02/fbd_clean.ld	repro/d02/props.yaml	ERROR	suite chemical_batch/fbd_reactor_2oo3 clean
+c04	d02	repro/d02/il_body.ld	repro/d02/il_props.yaml	ERROR	regression body_fbd_unsupported_fail with <IL> body
+c05	d03	repro/d03/program.ld	repro/d03/props.yaml	SAFE	suite manufacturing/g_two_hand_fb program
+c06	d03	repro/d03/type_i.ld	repro/d03/props.yaml	SAFE	suite manufacturing/g_two_hand_fb type_i
+c07	d04	repro/d04/clean.ld	repro/d04/props.yaml	SAFE	suite packaging/guard_door_interlock clean
+c08	d04	repro/d04/bomb.ld	repro/d04/props.yaml	VIOLATION	suite packaging/guard_door_interlock bomb
+c09	d05	repro/d05/program.ld	repro/d05/props.yaml	SAFE	suite elevator/g_ctd_load
 c10	timer-havoc	repro/timer_havoc/minimal_timer.ld	repro/timer_havoc/props_A.yaml	SAFE	K-LD rung6/probe minimal_timer, prop A
-c11	7352	repro/i7352g/oneshot.ld	repro/i7352g/props_P1.yaml	VIOLATION	graphical one-shot, unwired right rail: one-shot must be able to fire
-c12	7352	repro/i7352g/oneshot.ld	repro/i7352g/props_P2.yaml	SAFE	graphical one-shot: fires only while Sig high (IEC sequential)
+c11	d04	repro/d04g/oneshot.ld	repro/d04g/props_P1.yaml	VIOLATION	graphical one-shot, unwired right rail: one-shot must be able to fire
+c12	d04	repro/d04g/oneshot.ld	repro/d04g/props_P2.yaml	SAFE	graphical one-shot: fires only while Sig high (IEC sequential)

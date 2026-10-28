@@ -15,7 +15,7 @@ index a48780bf34..c40a5b904e 100644
 -  // This is a common technique in k-induction to strengthen the induction
 -  // hypothesis. also, don't convert assertions added by the bidirectional
 -  // search
-+  // EXPERIMENT (pre-#2328 behaviour): before the last loop iteration the
++  // EXPERIMENT (older k-induction behaviour): before the last loop iteration the
 +  // inductive step assumes the claim instead of checking it, so the property
 +  // is the induction hypothesis. Bidirectional-search assertions stay checked.
    if (
