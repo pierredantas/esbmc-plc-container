@@ -16,7 +16,7 @@
 
 ## Tool and harness
 
-- ESBMC fork commit `1d7ad4332b`: the paper pin `03ad8f91af` plus the four refusals of esbmc/esbmc#8858.
+- ESBMC fork commit `1d7ad4332b`: the paper pin `03ad8f91af` plus the four upstream parser refusals.
   Release build in `~/Claude/esbmc-tp/build`. Sanity check: `ws1/tv_corpus.py` on `g_ton_single`,
   `g_tof_hold`, `g_ctu_saturate`, `g_rtrig_edge` gives 4 equivalent and, with `--control`, 4 detected, as
   `CLAIMS.md` records for the pin.

@@ -32,7 +32,7 @@ Inside the container: ESBMC in `/opt/esbmc` (built, with `esbmc` on `PATH`), the
 The image pins the build behind *ESBMC-PLC: Verifying IEC 61131-3 Ladder Diagrams with a
 Validated Translation to SMT-Based Model Checking*: ESBMC at fork commit `5efb80de72` (branch
 `pin/paper-2026-10-jumps`), which carries the prototype `--ld-monitor-invariants` used in RQ4 and the parser refusals
-that upstream ESBMC added in esbmc/esbmc#8858, and suite release v1.2.0. Every ESBMC number of the paper comes from this
+that upstream ESBMC added later, and suite release v1.2.0. Every ESBMC number of the paper comes from this
 one build. The run scripts are in `/opt/paper`.
 
 `reproduce-paper` reruns the suite, translation validation, the timer experiments, and both routes (several hours on
