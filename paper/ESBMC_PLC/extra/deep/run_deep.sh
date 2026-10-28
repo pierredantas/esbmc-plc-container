@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# RQ6: the delay-chain and dual-counter families with ESBMC-PLC and with PLCverif + NuSMV (Table 8).
+# RQ6: the delay-chain and dual-counter families with ESBMC-PLC and with PLCverif + NuSMV (Table 9).
 #   ESBMC=... SUITE=... [PLCVERIF=... NUSMV=... JAVA=...] extra/deep/run_deep.sh OUT_DIR
 set -uo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd); OUT=$1

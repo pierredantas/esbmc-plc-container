@@ -44,7 +44,7 @@ scripts. Run times depend on the machine; verdicts should not.
 
 ### Outside the image: PLCverif, NuSMV, 2LS
 
-The comparison with PLCverif (RQ3, Table 7; RQ6, Table 8) and the 2LS attempt (Appendix E.8) need tools the image
+The comparison with PLCverif (RQ3, Table 8; RQ6, Table 9) and the 2LS attempt (Appendix E.8) need tools the image
 does not carry; we ran them on macOS 26.7.1 (arm64). The scripts are in `paper/ESBMC_PLC/extra/` and take every
 path from the environment.
 
@@ -61,8 +61,8 @@ path from the environment.
 export SUITE=<suite v1.2.0> PLC_TOOLS=<Beremiz and MATIEC> PLCVERIF=<CLI folder> NUSMV=<NuSMV binary> \
        JAVA=<java 25+> BUILTIN="<plcverif-builtin-projects>/.builtin_Siemens S7-300/builtin.scl" ESBMC=<esbmc>
 extra/plcverif/run_blocktests.sh OUT/blocktests          # 8 of 8 OK
-extra/plcverif/run_plcverif.sh OUT/routes OUT/plcverif    # Table 7; needs OUT/routes from reproduce-paper
-extra/deep/run_deep.sh OUT/deep                           # Table 8, ESBMC-PLC and PLCverif parts
+extra/plcverif/run_plcverif.sh OUT/routes OUT/plcverif    # Table 8; needs OUT/routes from reproduce-paper
+extra/deep/run_deep.sh OUT/deep                           # Table 9, ESBMC-PLC and PLCverif parts
 ```
 
 ### Programs mined from GitHub (RQ2)

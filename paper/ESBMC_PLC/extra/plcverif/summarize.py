@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Combine PLCverif's assertion and witness runs and compare with the labels and ESBMC-PLC (Table 7):
+"""Combine PLCverif's assertion and witness runs and compare with the labels and ESBMC-PLC (Table 8):
 summarize.py ROUTES_DIR OUT_DIR
 
 A variant is SAFE for PLCverif when its assertions hold and every required witness is reachable (VIOLATED).

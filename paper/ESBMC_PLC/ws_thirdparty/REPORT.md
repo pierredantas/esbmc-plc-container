@@ -43,7 +43,7 @@
 
 - Every one of the 106 UNSAT queries was matched by a SAT control.
 - The 37 differences are all in PLC-LD copies whose programs use user function blocks, the EN/ENO cause
-  the paper already reports for the PLC-LD programs in the suite (Section 5, Table 7). Not narrowed
+  the paper already reports for the PLC-LD programs in the suite (Section 5.3, Table 5). Not narrowed
   per variable here.
 - Equivalent project programs are small: median 6 contacts, coils, and blocks; largest 77; 27 use blocks
   (TON 22, TOF 8, CTU 2, TP 2). Query time median 1.3 s, max 16.9 s.
