@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Appendix E, second C verifiers: 2LS k-induction on exported harnesses (harness.i), 120 s by watchdog.
+# Appendix D, second C verifiers: 2LS k-induction on exported harnesses (harness.i), 120 s by watchdog.
 #   TWOLS=<2ls binary> extra/second_verifiers/run_2ls.sh HARNESS_DIR OUT_DIR
 # HARNESS_DIR is the harnesses/ folder of extra/c_route/viac_export.py: run it on the names of
 # extra/c_route/names_from_routes.py for the SAFE check, and on the LD-route VIOLATION variants for the soundness

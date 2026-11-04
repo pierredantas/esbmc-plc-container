@@ -44,7 +44,7 @@ scripts. Run times depend on the machine; verdicts should not.
 
 ### Outside the image: PLCverif, NuSMV, 2LS
 
-The comparison with PLCverif (RQ3, Table 8; RQ6, Table 9) and the 2LS attempt (Appendix E.8) need tools the image
+The comparison with PLCverif (RQ3, Table 8; RQ6, Table 9) and the 2LS attempt (Appendix D.8) need tools the image
 does not carry; we ran them on macOS 26.7.1 (arm64). The scripts are in `paper/ESBMC_PLC/extra/` and take every
 path from the environment.
 
@@ -55,7 +55,7 @@ path from the environment.
 | PLCverif block library | `builtin.scl` of `https://gitlab.com/plcverif-oss/plcverif-builtin-projects`, commit `c2734010b0ab112c2465126a7b60cc0410d97a88`, folder `.builtin_Siemens S7-300` | Eclipse Public License 2.0, so fetched, not copied here; supplies TON, TOF, TP |
 | IEC blocks | `extra/plcverif/iec_blocks.scl` | our transcription of R_TRIG, F_TRIG, CTU, CTD; `run_blocktests.sh` checks them |
 | NuSMV | 2.7.1 source, `https://nusmv.fbk.eu/distrib/2.7.1/NuSMV-2.7.1.tar.xz`, SHA-256 `f1e11931f71d98aa9b84181eed67db584d7111100c2e967c904a31c15f823f60` | `meson setup build --buildtype=release -Dbuild-doc=disabled -Dbuild-universal-binary=disabled`; needs GNU flex, pkg-config, GMP, libedit, and a `python` on `PATH` |
-| 2LS | `https://github.com/diffblue/2ls`, commit `9a9ad377` (0.10.0) | built with `-Wno-error=#warnings` added to `src/config.inc` and the Glucose download of its CBMC; its verdicts were not used (Appendix E.8) |
+| 2LS | `https://github.com/diffblue/2ls`, commit `9a9ad377` (0.10.0) | built with `-Wno-error=#warnings` added to `src/config.inc` and the Glucose download of its CBMC; its verdicts were not used (Appendix D.8) |
 
 ```
 export SUITE=<suite v1.2.0> PLC_TOOLS=<Beremiz and MATIEC> PLCVERIF=<CLI folder> NUSMV=<NuSMV binary> \
